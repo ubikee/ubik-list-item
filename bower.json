@@ -1,0 +1,30 @@
+{
+  "name": "seed-element",
+  "version": "0.0.0",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "List Item component",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "ubik-listitem.html",
+  "license": "MIT",
+  "homepage": "http://github.com/ubikee/ubik-listitem",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-icon": "Polymer/core-icon#^0.5.4",
+    "core-icons": "Polymer/core-icons#^0.5.4",
+    "paper-button" : "Polymer/paper-button#^0.5.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  }
+}

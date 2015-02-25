@@ -1,0 +1,58 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>seed-element Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+
+  <link rel="import" href="ubik-listitem.html">
+  <link rel="import" href="../core-icon/core-icon.html">
+  <link rel="import" href="../core-icons/core-icons.html">
+
+</head>
+<body unresolved>
+
+  <p>An example of using <code>&lt;ubik-listitem&gt;</code>:</p>
+
+  <div vertical layout>
+
+    <ubik-listitem icon="chevron-right" label="INTEGRACION" subhead="CC.CC - TPV Pds2 r23.3_conexflow - DESARROLLO">
+      <core-icon icon="done"></core-icon>
+      <paper-button class="action"><core-icon icon="favorite"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="flag"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="help"></core-icon></paper-button>
+    </ubik-listitem>
+
+    <ubik-listitem icon="chevron-right" label="RELEASE" subhead="CC.CC - TPV Pds2 r23.3_conexflow - DESARROLLO">
+      <paper-button class="action"><core-icon icon="favorite"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="flag"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="help"></core-icon></paper-button>
+    </ubik-listitem>
+    <ubik-listitem icon="chevron-right" label="PRODUCCION" subhead="CC.CC - TPV Pds2 r23.3_conexflow - DESARROLLO">
+      <paper-button class="action"><core-icon icon="favorite"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="flag"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="help"></core-icon></paper-button>
+    </ubik-listitem>
+    <ubik-listitem icon="chevron-right" label="Mantenimiento">
+      <paper-button class="action"><core-icon icon="favorite"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="flag"></core-icon></paper-button>
+    </ubik-listitem>    
+    <ubik-listitem icon="chevron-right" label="Desarrollo">
+      <paper-button class="action"><core-icon icon="flag"></core-icon></paper-button>
+      <paper-button class="action"><core-icon icon="help"></core-icon></paper-button>
+    </ubik-listitem>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+:host {
+  display: block;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(0,0,0,0.87);
+}
+
+main {
+  padding-left: 16px;
+  background-color: #ffffff;
+}
+
+main > * {
+	margin-right : 16px;
+}
+
+main:hover  {
+	cursor : pointer;
+	background-color: #EEE;
+}
+
+main:hover .actionholder {
+	display : flex;
+}
+
+/* To ensure your styling works under the Shadow DOM polyfill, see
+   www.polymer-project.org/docs/polymer/styling.html#directives */
+polyfill-next-selector { content: ':host > h2'; }
+::content h2 {
+  color: blue;
+}
+
+/* FONTS */
+.title {
+	font-size: 1.3em;
+	font-weight: 500;
+}
+
+.subhead {
+	font-size : 1.1em;
+}
+
+.body1 {
+	font-size: 1em;
+}
+
+.body2 {
+	font-size: 1em;
+	font-weight: 500;
+} 
+
+.caption {
+	font-size: 0.8em;
+	color: rgba(0,0,0,0.54);
+}
+
+/* LAYOUT */
+
+.iconholder {
+	width: 48px;
+	height: 56px;
+}
+
+.icon {
+	width: 36px;
+	height: 36px;
+	border-radius: 25px;
+	background-color: #DDD;
+}
+
+.textholder {
+	padding-top : 8px;
+}
+
+/* COMPONENTS */
+.actionholder {
+	border-left : solid 1px #FFF;
+	display:none;
+}
+
+content[select="core-icon"]::content core-icon {
+	border-radius: 20px;
+	color : #FFF;
+	font-weight: 500;
+	background-color: #88B0D4;
+}
+
+content[select="paper-button"]::content paper-button {
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 20px;
+}
+
+content[select="paper-button"]::content paper-button:hover {
+	background-color: #CCC;
+}

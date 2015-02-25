@@ -1,0 +1,121 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+List item
+
+##### Example
+
+    <ubik-listitem icon="person" label="John Doe" subhead="johndoe@gmail.com"></ubik-listitem>
+
+@element ubik-listitem
+@blurb List item
+@status alpha
+@homepage http://github.com/ubikee/ubik-lisitem
+-->
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<polymer-element name="ubik-listitem" attributes="icon label subhead">
+
+  <template>
+
+    <link rel="stylesheet" href="ubik-listitem.css">
+    <main flex horizontal layout>
+
+      <div class="iconholder" vertical layout center-center>
+        <div class="icon" vertical layout center-center>
+          <core-icon icon="{{icon}}"></core-icon>
+        </div>
+      </div>
+
+      <div class="textholder" flex>
+        <div class="title">{{label}}</div>
+        <div class="subhead">{{subhead}}</div>
+      </div>
+
+      <div class="iconholder" vertical layout center-center>
+        <content select="core-icon"></content>
+      </div>
+
+      <div class="actionholder">
+        <div horizontal around-justified center layout>
+          <content select="paper-button"></content>
+        </div>
+      </div>
+
+    </main>
+  </template>
+
+  <script>
+
+    Polymer({
+
+      /**
+       * The `icon` attribute sets an icon
+       *
+       * @attribute icon
+       * @type string
+       * @default empty
+       */
+      icon: '',
+
+      /**
+       * `label` sets item title text
+       *
+       * @attribute label
+       * @type string
+       * @default empty
+       */
+      label: '',
+
+      /**
+       * 'subhed' second line auxiliar info
+       *
+       * @attribute subhead
+       * @type string
+       * @default empty
+       */
+      subhead : '',
+
+      ready: function() {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+      },
+
+      /**
+       * The `sayHello` method will return a greeting.
+       *
+       * @method sayHello
+       * @param {String} greeting Pass in a specific greeting.
+       * @return {String} Returns a string greeting.
+       */
+      sayHello: function(greeting) {
+        var response = greeting || 'Hello World!';
+        return 'seed-element says, ' + response;
+      },
+
+      /**
+       * The `seed-element-lasers-success` event is fired whenever we
+       * call fireLasers.
+       *
+       * @event seed-element-lasers-success
+       * @param {Object} detail
+       *   @param {string} detail.sound An amazing sound.
+       */
+
+      /**
+       * The `fireLasers` method will fire the lasers. At least
+       * it will dispatch an event that claims lasers were fired :)
+       *
+       * @method fireLasers
+       */
+      fireLasers: function() {
+        this.fire('seed-element-lasers-success', { sound: 'Pew pew pew!' });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
