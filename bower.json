@@ -1,8 +1,8 @@
 {
-  "name": "seed-element",
-  "version": "0.0.0",
+  "name": "ubik-list-item",
+  "version": "0.0.1",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "Ernesto Roldan Garcia <jeroldan@gmail.com>"
   ],
   "description": "List Item component",
   "keywords": [
@@ -11,7 +11,7 @@
     "polymer",
     "seed"
   ],
-  "main": "ubik-listitem.html",
+  "main": "ubik-list-item.html",
   "license": "MIT",
   "homepage": "http://github.com/ubikee/ubik-listitem",
   "ignore": [

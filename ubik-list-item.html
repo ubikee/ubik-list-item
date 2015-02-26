@@ -1,0 +1,107 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--
+List item
+
+##### Example
+
+    <ubik-list-item icon="face" label="John Doe" text="johndoe@gmail.com">
+      <core-icon icon="trending-up"></core-icon>
+      <paper-button> <core-icon icon="favorite"></core-icon> </paper-button>
+      <paper-button> <core-icon icon="info"    ></core-icon> </paper-button>
+    </ubik-list-item>
+
+@element ubik-list-item
+@blurb List item
+@status alpha
+@homepage http://github.com/ubikee/ubik-lisitem
+-->
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<polymer-element name="ubik-list-item" attributes="icon label text actions">
+
+  <template>
+
+    <link rel="stylesheet" href="ubik-list-item.css">
+    <main flex horizontal layout>
+
+      <div class="iconarea" vertical layout center-center>
+        <div class="icon" vertical layout center-center>
+          <core-icon icon="{{icon}}"></core-icon>
+        </div>
+      </div>
+
+      <div class="contentarea" flex horizontal layout>
+        <div class="textarea"   flex vertical layout>
+          <div class="title">{{label}}</div>
+          <div class="caption">{{text}}</div>
+        </div>
+        <div class="infoarea" vertical layout center-center>
+          <div horizontal around-justified layout center>
+            <content select="core-icon"></content>
+          </div>
+        </div>
+      </div>
+
+      <template if="{{actions}}">
+        <div class="actionarea" vertical layout center-center>
+          <div horizontal around-justified layout center>
+            <content select="paper-button"></content>
+          </div>
+        </div>
+      </template>
+
+    </main>
+  </template>
+
+  <script>
+
+    Polymer({
+
+      /**
+       * The `icon` attribute sets an icon
+       *
+       * @attribute icon
+       * @type string
+       * @default empty
+       */
+      icon: '',
+
+      /**
+       * The `label` attribute sets the item title text
+       *
+       * @attribute label
+       * @type string
+       * @default empty
+       */
+      label: '',
+
+      /**
+       * The `text` attribute sets the second line text
+       *
+       * @attribute text
+       * @type string
+       * @default empty
+       */
+      text : '',
+
+      /**
+       * The `actions` flag enables action area
+       *
+       * @attribute action
+       * @type boolean
+       * @default true
+       */
+      actions : true,
+
+      ready: function() {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+      },
+
+    });
+
+  </script>
+
+</polymer-element>
