@@ -22,6 +22,7 @@
     "polymer": "Polymer/polymer#^0.5.4",
     "core-icon": "Polymer/core-icon#^0.5.4",
     "core-icons": "Polymer/core-icons#^0.5.4",
+    "core-media-query": "Polymer/core-media-query#^0.5.4",
     "paper-button" : "Polymer/paper-button#^0.5.4"
   },
   "devDependencies": {

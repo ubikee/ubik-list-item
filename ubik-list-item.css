@@ -26,8 +26,9 @@ main:hover  {
 	background-color: #EEE;
 }
 
-main:hover .actionarea {
+main:hover .actionareahidden {
 	width:100px;
+	border-left-width: 1px;
 }
 
 /* To ensure your styling works under the Shadow DOM polyfill, see
@@ -95,17 +96,26 @@ polyfill-next-selector { content: ':host > h2'; }
 }
 
 .actionarea {
-	margin-right : 0px;
-	overflow: hidden;
-	border-left : solid 1px #FFF;
-	-webkit-transition: width 0.3s easy; /* For Safari 3.1 to 6.0 */
+    margin-right : 0px;
+    overflow: hidden;
+    border-left : solid 1px #FFF;
+    width:100px;
+}
+
+.actionareahidden {
+    -webkit-transition: width 0.3s easy; /* For Safari 3.1 to 6.0 */
     transition: width 0.3s;
-	width:0px;
+    border-left-width: 0px;
+    width:0px;
+}
+
+content[select="i"]::content i {
+	font-size: 2em;
 }
 
 content[select="core-icon"]::content core-icon {
 	border-radius: 20px;
-	color : #FFF;
+	color: #FFF;
 	font-weight: 500;
 	background-color: #88B0D4;
 	margin-right:4px;

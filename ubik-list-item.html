@@ -17,17 +17,24 @@ List item
 -->
 <link rel="import" href="../core-icon/core-icon.html">
 <link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-media-query/core-media-query.html">
 <link rel="import" href="../paper-button/paper-button.html">
-<polymer-element name="ubik-list-item" attributes="icon label text actions">
+<polymer-element name="ubik-list-item" attributes="icon label text query">
 
   <template>
 
     <link rel="stylesheet" href="ubik-list-item.css">
+
+    <core-media-query query="{{query}}" queryMatches="{{smallScreen}}"></core-media-query>
+
     <main flex horizontal layout>
 
       <div class="iconarea" vertical layout center-center>
         <div class="icon" vertical layout center-center>
-          <core-icon icon="{{icon}}"></core-icon>
+          <template if="{{icon}}">
+            <core-icon icon="{{icon}}"></core-icon>
+          </template>
+          <content select="i"></content>
         </div>
       </div>
 
@@ -43,13 +50,11 @@ List item
         </div>
       </div>
 
-      <template if="{{actions}}">
-        <div class="actionarea" vertical layout center-center>
-          <div horizontal around-justified layout center>
-            <content select="paper-button"></content>
-          </div>
+      <div class="actionarea {{ {actionareahidden:smallScreen} | tokenList }}" vertical layout center-center>
+        <div horizontal around-justified layout center>
+          <content select="paper-button"></content>
         </div>
-      </template>
+      </div>
 
     </main>
   </template>
@@ -86,13 +91,13 @@ List item
       text : '',
 
       /**
-       * The `actions` flag enables action area
+       * The `query` attribute sets de media-query to hide actions
        *
-       * @attribute action
-       * @type boolean
-       * @default true
+       * @attribute query
+       * @type string
+       * @default ´max-width:768px´
        */
-      actions : true,
+      query : 'max-width:768px',
 
       ready: function() {
         // Ready is a lifecycle callback.
