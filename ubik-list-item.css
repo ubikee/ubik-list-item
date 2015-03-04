@@ -26,7 +26,8 @@ main:hover  {
 	background-color: #EEE;
 }
 
-main:hover .actionareahidden {
+.main {}
+.main:hover .actionareahidden {
 	width:100px;
 	border-left-width: 1px;
 }
@@ -95,6 +96,28 @@ polyfill-next-selector { content: ':host > h2'; }
 
 }
 
+.collapsearea {
+    border-left : solid 1px #FFF;
+    padding-left: 16px;
+}
+
+.collapsebtn {
+	background-color : #DDD;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 20px;
+}
+
+.collapsebtn > core-icon{
+	transition-property: transform;
+	transition-duration: 0.5s;
+    transition-timing-function:ease-in;/* timing function */
+}
+
+.collapsebtn[opened] > core-icon {
+	transform: rotate(180deg);
+}
+
 .actionarea {
     margin-right : 0px;
     overflow: hidden;
@@ -113,7 +136,7 @@ content[select="i"]::content i {
 	font-size: 2em;
 }
 
-content[select="core-icon"]::content core-icon {
+content[select=".info"]::content core-icon {
 	border-radius: 20px;
 	color: #FFF;
 	font-weight: 500;
@@ -121,12 +144,17 @@ content[select="core-icon"]::content core-icon {
 	margin-right:4px;
 }
 
-content[select="paper-button"]::content paper-button {
+content[select=".action"]::content paper-button {
 	min-width: 40px;
 	min-height: 40px;
 	border-radius: 20px;
 }
 
-content[select="paper-button"]::content paper-button:hover {
+content[select=".action"]::content paper-button:hover {
 	background-color: #CCC;
+}
+
+content[select="section"]::content section{
+    padding-left: 48px;
+    padding-right: 16px;
 }

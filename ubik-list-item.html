@@ -18,8 +18,9 @@ List item
 <link rel="import" href="../core-icon/core-icon.html">
 <link rel="import" href="../core-icons/core-icons.html">
 <link rel="import" href="../core-media-query/core-media-query.html">
+<link rel="import" href="../core-collapse/core-collapse.html">
 <link rel="import" href="../paper-button/paper-button.html">
-<polymer-element name="ubik-list-item" attributes="icon label text query">
+<polymer-element name="ubik-list-item" attributes="icon label text query collapsable collapsed">
 
   <template>
 
@@ -29,6 +30,7 @@ List item
 
     <main flex horizontal layout>
 
+    <div class="main" flex horizontal layout>
       <div class="iconarea" vertical layout center-center>
         <div class="icon" vertical layout center-center>
           <template if="{{icon}}">
@@ -45,18 +47,32 @@ List item
         </div>
         <div class="infoarea" vertical layout center-center>
           <div horizontal around-justified layout center>
-            <content select="core-icon"></content>
+            <content select=".info"></content>
           </div>
         </div>
       </div>
 
       <div class="actionarea {{ {actionareahidden:smallScreen} | tokenList }}" vertical layout center-center>
         <div horizontal around-justified layout center>
-          <content select="paper-button"></content>
+          <content select=".action"></content>
         </div>
       </div>
-
+    </div>
+      <template if="{{collapsable}}">
+        <div class="collapsearea" horizontal around-justified layout center>
+          <paper-button class="collapsebtn" on-click="{{toggle}}" opened?="{{!collapsed}}">
+            <core-icon icon="arrow-drop-down"></core-icon>
+          </paper-button>
+        </div>
+      </template>
     </main>
+
+    <template if="{{collapsable}}">
+      <core-collapse id="collapse" opened?="{{!collapsed}}">
+        <content select="section"></content>
+      </core-collapse>
+    </template>
+
   </template>
 
   <script>
@@ -99,11 +115,34 @@ List item
        */
       query : 'max-width:768px',
 
+      /**
+       * The `collapsable` attribute enables collapsed content area
+       *
+       * @attribute collapsable
+       * @type boolean  
+       * @default false
+       */
+      collapsable : false,
+
+      /**
+       * The `collapsed` attribute toggles the collapsable content area state.
+       *
+       * @attribute collapsed
+       * @type boolean
+       * @default false
+       */
+      collapsed : false,
+
       ready: function() {
         // Ready is a lifecycle callback.
         // You can do setup work in here.
         // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
       },
+
+      toggle : function () {
+        this.collapsed = !this.collapsed;
+        this.$.collapse.toggle();
+      }
 
     });
 

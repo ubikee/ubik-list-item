@@ -24,21 +24,24 @@
   <div vertical layout>
 
     <ubik-list-item icon="face" label="Curtis Connors" text="lizard@gmail.com">
-      <core-icon icon="trending-up"></core-icon>
-      <paper-button> <core-icon icon="favorite"></core-icon> </paper-button>
-      <paper-button> <core-icon icon="info"    ></core-icon> </paper-button>
+      <core-icon class="info" icon="trending-up"></core-icon>
+      <paper-button class="action"> <core-icon icon="favorite"></core-icon> </paper-button>
+      <paper-button class="action"> <core-icon icon="info"    ></core-icon> </paper-button>
     </ubik-list-item>
 
-    <ubik-list-item icon="face" label="Otto Octavius" text="octopus@gmail.com">
-      <core-icon icon="trending-down"></core-icon>
-      <paper-button> <core-icon icon="favorite"></core-icon> </paper-button>
-      <paper-button> <core-icon icon="info"    ></core-icon> </paper-button>
+    <ubik-list-item icon="face" label="Otto Octavius" text="octopus@gmail.com" collapsable="true" collapsed="true">
+      <core-icon class="info" icon="trending-down"></core-icon>
+      <paper-button class="action"> <core-icon icon="favorite"></core-icon> </paper-button>
+      <paper-button class="action"> <core-icon icon="info"    ></core-icon> </paper-button>
+      <section>
+        <p>Doctor Octopus, real name Dr. Otto Gunther Octavius and also known as Doc Ock, Doc Octopus and the Superior Spider-Man, is a fictional character, a supervillain that appears in comic books published by Marvel Comics since 1963</p>
+      </section>
     </ubik-list-item>
 
     <ubik-list-item icon="face" label="Vladimir Kravinoff" text="kraven@gmail.com">
-      <core-icon icon="trending-neutral"></core-icon>
-      <paper-button> <core-icon icon="favorite"></core-icon> </paper-button>
-      <paper-button> <core-icon icon="info"    ></core-icon> </paper-button>
+      <core-icon class="info" icon="trending-neutral"></core-icon>
+      <paper-button class="action"> <core-icon icon="favorite"></core-icon> </paper-button>
+      <paper-button class="action"> <core-icon icon="info"    ></core-icon> </paper-button>
     </ubik-list-item>      
 
   </div>
